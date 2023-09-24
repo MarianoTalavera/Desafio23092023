@@ -1,0 +1,12 @@
+window.onload = async function() {
+    try {
+        await fetch('/api/sessions/logout', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }});
+        window.location.href = "/login";
+} catch (error) {
+        console.error(error);
+        Swal.fire({ icon: 'error', title: 'Hubo un problema...', text: 'Hubo un error al cerrar sesión' });
+}}
